@@ -53,6 +53,7 @@
           <groupId>com.ncipher.km</groupId>
           <artifactId>nfkm</artifactId>
           <scope>compile</scope>
+          <version>1.0</version>
         </dependency>
       </dependencies>
       <build>
