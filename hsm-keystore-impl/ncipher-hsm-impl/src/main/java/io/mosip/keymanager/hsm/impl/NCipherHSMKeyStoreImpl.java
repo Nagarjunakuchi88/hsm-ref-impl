@@ -75,7 +75,7 @@ public class NCipherHSMKeyStoreImpl implements io.mosip.kernel.core.keymanager.s
 	/**
 	 * Default nFast protection type to cardset.
 	 */
-	private static final String PROTECT_TYPE = "softcard:e3800b6e7f1b71f0c3bc5163a0f0ae7478ce4ff4";
+	private static final String PROTECT_TYPE = "softcard:86fbc59f35da766621e494da0fc60133a6ec90a4";														 
 
 	/**
 	 * The type of keystore
@@ -87,7 +87,7 @@ public class NCipherHSMKeyStoreImpl implements io.mosip.kernel.core.keymanager.s
 	/**
 	 * The passkey for partition
 	 */
-	private String keystorePass="niraentrust@1234";
+	private String keystorePass="niraesignet@456";
 
 	/**
 	 * Symmetric key algorithm Name
@@ -153,7 +153,7 @@ public class NCipherHSMKeyStoreImpl implements io.mosip.kernel.core.keymanager.s
 			throw new KeystoreProcessingException(KeymanagerErrorCode.NOT_VALID_STORE_PASSWORD.getErrorCode(),
 					KeymanagerErrorCode.NOT_VALID_STORE_PASSWORD.getErrorMessage());
 		}
-		return "niraentrust@1234".toCharArray();
+		return "niraesignet@456".toCharArray();
 	}
 
 	private void addProvider() {
@@ -184,7 +184,7 @@ public class NCipherHSMKeyStoreImpl implements io.mosip.kernel.core.keymanager.s
 	private KeyStore getKeystoreInstance() {
 		KeyStore nCipherKeyStore = null;
 		try {
-			System.setProperty("protect", "softcard:e3800b6e7f1b71f0c3bc5163a0f0ae7478ce4ff4");
+			System.setProperty("protect", "softcard:86fbc59f35da766621e494da0fc60133a6ec90a4");
 			nCipherKeyStore = KeyStore.getInstance(keystoreType, nCipherProvider.getName());
 			Path path = Paths.get(keyStoreFilePath);
 			// if file is not available, it will get created when new key get created.
